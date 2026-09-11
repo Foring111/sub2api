@@ -110,7 +110,7 @@ export default {
       button: 'Sign Up Free'
     },
     footer: {
-      allRightsReserved: 'All rights reserved.'
+      allRightsReserved: 'Copyright © ChiRe Technology. All rights reserved.'
     }
   },
 
@@ -192,8 +192,8 @@ export default {
 
   // Setup Wizard
   setup: {
-    title: 'Sub2API Setup',
-    description: 'Configure your Sub2API instance',
+    title: 'ChiRe API Setup',
+    description: 'Configure your ChiRe API instance',
     database: {
       title: 'Database Configuration',
       description: 'Connect to your PostgreSQL database',
