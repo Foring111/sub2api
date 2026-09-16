@@ -92,6 +92,11 @@
           <button class="btn btn-primary flex-1" @click="router.push('/orders')">{{ t('payment.result.viewOrders') }}</button>
         </div>
       </template>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="text-center">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -101,6 +106,7 @@ import { ref, computed, onBeforeUnmount, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import OrderStatusBadge from '@/components/payment/OrderStatusBadge.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 import {
   PAYMENT_RECOVERY_STORAGE_KEY,
   clearPaymentRecoverySnapshot,

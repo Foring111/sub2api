@@ -494,6 +494,11 @@
           </button>
         </div>
       </div>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="mt-6 text-center">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -506,6 +511,7 @@ import { buildGatewayUrl } from '@/api/client'
 import Select from '@/components/common/Select.vue'
 import Toggle from '@/components/common/Toggle.vue'
 import Icon from '@/components/icons/Icon.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 
 const { t } = useI18n()
 

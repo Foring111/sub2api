@@ -18,6 +18,11 @@
       <main class="p-4 md:p-6 lg:p-8">
         <slot />
       </main>
+
+      <!-- Footer：ICP 备案号（登录后所有控制台页面统一展示，数据源见 src/constants/site.ts） -->
+      <footer class="border-t border-gray-200 px-4 py-4 text-center md:px-6 lg:px-8 dark:border-dark-800">
+        <IcpLicense />
+      </footer>
     </div>
   </div>
 </template>
@@ -31,6 +36,7 @@ import { useOnboardingTour } from '@/composables/useOnboardingTour'
 import { useOnboardingStore } from '@/stores/onboarding'
 import AppSidebar from './AppSidebar.vue'
 import AppHeader from './AppHeader.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 
 const appStore = useAppStore()
 const authStore = useAuthStore()

@@ -58,6 +58,11 @@
       <div class="mt-8 text-center text-xs text-gray-400 dark:text-dark-500">
         &copy; {{ currentYear }} {{ siteName }}. All rights reserved.
       </div>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="mt-2 text-center">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -66,6 +71,7 @@
 import { computed, onMounted } from 'vue'
 import { useAppStore } from '@/stores'
 import { sanitizeUrl } from '@/utils/url'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 
 const appStore = useAppStore()
 

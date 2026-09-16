@@ -34,6 +34,11 @@
           </button>
         </div>
       </div>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="mt-6 text-center">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +48,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import { useAppStore } from '@/stores'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 
 const { t } = useI18n()
 const route = useRoute()

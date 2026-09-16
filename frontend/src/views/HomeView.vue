@@ -1,15 +1,20 @@
 <template>
   <!-- Custom Home Content: Full Page Mode -->
-  <div v-if="hasHomeContent" class="min-h-screen">
+  <div v-if="hasHomeContent" class="flex min-h-screen flex-col">
     <!-- iframe mode -->
     <iframe
       v-if="isHomeContentUrl"
       :src="homeContent.trim()"
-      class="h-screen w-full border-0"
+      class="w-full min-h-0 flex-1 border-0"
       allowfullscreen
     ></iframe>
     <!-- HTML mode - SECURITY: homeContent is admin-only setting, XSS risk is acceptable -->
-    <div v-else v-html="homeContent"></div>
+    <div v-else class="flex-1" v-html="homeContent"></div>
+
+    <!-- Footer：ICP 备案号（自定义首页内容模式下同样展示，数据源见 src/constants/site.ts） -->
+    <footer class="shrink-0 border-t border-gray-200 px-4 py-4 text-center dark:border-dark-800">
+      <IcpLicense />
+    </footer>
   </div>
 
   <!-- Compact Home Page -->
@@ -86,7 +91,8 @@
     </main>
 
     <footer class="min-w-0 border-t border-gray-200 px-4 py-5 text-center text-sm text-gray-500 [overflow-wrap:anywhere] sm:px-6 dark:border-dark-800 dark:text-dark-400">
-      &copy; {{ currentYear }} {{ siteName }}
+      <div>&copy; {{ currentYear }} {{ siteName }}</div>
+      <IcpLicense class="mt-2" />
     </footer>
   </div>
 
@@ -488,6 +494,8 @@
             GitHub
           </a>
         </div>
+        <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+        <IcpLicense />
       </div>
     </footer>
   </div>
@@ -499,6 +507,7 @@ import { useI18n } from 'vue-i18n'
 import { useAuthStore, useAppStore } from '@/stores'
 import LocaleSwitcher from '@/components/common/LocaleSwitcher.vue'
 import Icon from '@/components/icons/Icon.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 import { sanitizeUrl } from '@/utils/url'
 import { FeatureFlags, isFeatureFlagEnabled } from '@/utils/featureFlags'
 

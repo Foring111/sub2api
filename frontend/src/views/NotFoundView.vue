@@ -73,6 +73,11 @@
           Contact support
         </a>
       </p>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="mt-4">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -81,6 +86,7 @@
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import Icon from '@/components/icons/Icon.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 
 const { t } = useI18n()
 const router = useRouter()

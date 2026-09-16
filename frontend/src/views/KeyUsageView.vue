@@ -411,6 +411,8 @@
             class="text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-dark-400 dark:hover:text-white"
           >GitHub</a>
         </div>
+        <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+        <IcpLicense />
       </div>
     </footer>
   </div>
@@ -423,6 +425,7 @@ import { useAppStore } from '@/stores'
 import { FeatureFlags, resolveFeatureFlag } from '@/utils/featureFlags'
 import LocaleSwitcher from '@/components/common/LocaleSwitcher.vue'
 import Icon from '@/components/icons/Icon.vue'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 import { buildGatewayUrl } from '@/api/client'
 import { formatDateLocalInput } from '@/utils/format'
 import { sanitizeUrl } from '@/utils/url'

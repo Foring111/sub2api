@@ -48,6 +48,11 @@
         />
         <span class="ml-3 text-sm text-gray-500 dark:text-slate-400">{{ hint }}</span>
       </div>
+
+      <!-- ICP 备案号（全站统一，数据源见 src/constants/site.ts） -->
+      <div class="pt-1 text-center">
+        <IcpLicense />
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +61,7 @@
 import { computed, ref, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
+import IcpLicense from '@/components/common/IcpLicense.vue'
 import { extractI18nErrorMessage } from '@/utils/apiError'
 import { isMobileDevice } from '@/utils/device'
 import { buildApiUrl } from '@/api/client'
